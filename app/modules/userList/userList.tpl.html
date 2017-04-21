@@ -1,0 +1,23 @@
+<div class="userTable">
+    <table class="table-bordered table-responsive">
+        <thead>
+        <tr>
+            <th>first name</th>
+            <th>last name</th>
+            <th>username</th>
+            <th>age</th>
+            <th>remove user</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in listCtrl.usersList">
+            <td>{{user.firstName | Capitalize}}</td>
+            <td>{{user.lastName | Capitalize}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.age}}</td>
+            <td><i ng-click="listCtrl.usersList.splice($index, 1)" class="fa fa-trash-o"></i></td>
+        </tr>
+        </tbody>
+    </table>
+    <a ng-click="listCtrl.changeView()" class="btn btn-default">add new user</a>
+</div>

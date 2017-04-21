@@ -1,0 +1,62 @@
+<div class="user-form">
+    <div class="col-sm-10 col-xs-12">
+        <form class="form-horizontal" name="userForm" ng-submit="addUserDCtrl.addUser(userForm)" novalidate>
+            <div class="form-group">
+                <label for="firstName" class="col-sm-3 control-label">first name*</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" ng-model="addUserDCtrl.user.firstName"
+                           required minlength="2" pattern="[a-zA-Z]+">
+                    <div ng-messages="userForm.firstName.$error" style="color:maroon" role="alert">
+                        <div ng-if="userForm.$submitted" ng-message="required">Please enter the first name.</div>
+                        <div ng-message="minlength">First name required min. length is 2</div>
+                        <div ng-message="pattern">This field accept only letters</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName" class="col-sm-3 control-label">last name*</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name"
+                           ng-model="addUserDCtrl.user.lastName" required minlength="2" pattern="[a-zA-Z]+">
+                    <div ng-messages="userForm.lastName.$error" style="color:maroon" role="alert">
+                        <div ng-if="userForm.$submitted" ng-message="required">Please enter the last name.</div>
+                        <div ng-message="minlength">Last name required length is 2</div>
+                        <div ng-message="pattern">This field accept only letters</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username" class="col-sm-3 control-label">username*</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="username" name="username" placeholder="Username"
+                           ng-model="addUserDCtrl.user.username" minlength="6" required>
+                    <div ng-messages="userForm.username.$error" style="color:maroon" role="alert">
+                        <div ng-if="userForm.$submitted" ng-message="required">Please enter the username.</div>
+                        <div ng-message="minlength">Username required length is 4</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age" class="col-sm-3 control-label">Age*</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="age" name="userAge" placeholder="Age" ng-model="addUserDCtrl.user.age"
+                           required max="150">
+                    <div ng-messages="userForm.userAge.$error" style="color:maroon" role="alert">
+                        <div ng-if="userForm.$submitted" ng-message="required">Please enter the value for this field.</div>
+                        <div ng-message="max">Max value for age is 150</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">add new user</button>
+                    <button class="btn btn-default" ng-click="addUserDCtrl.back()">Back</button>
+                    <ng-transclude></ng-transclude>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

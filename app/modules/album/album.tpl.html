@@ -1,0 +1,22 @@
+<div class="albumTable">
+    <div class="pagination-buttons col-md-4 col-md-offset-5">
+        <button class ="pagePicker btn btn-default" ng-click="albumCtrl.prevPage()"> prev album </button>
+        <button class ="pagePicker btn btn-default" ng-click="albumCtrl.nextPage()"> next album </button>
+
+    </div>
+    <div class="album-items" ng-repeat="(key,value) in albumCtrl.items | ItemFilter: albumCtrl.pageNum: 50 | groupBy: 'albumId'">
+        <div class="col-md-12">
+            <h2>Album nr: {{key}}</h2>
+        </div>
+        <div class="album-img" ng-repeat="img in value">
+            <div class="col-sm-4 img-box">
+                <figure>
+                    <img ng-model='thumbnail' ng-click="albumCtrl.open(img)" class="img-responsive" src="{{img.thumbnailUrl}}" alt="">
+                    <!--<img-full ng-show="albumCtrl.showDirective" url="{{img.url}}"></img-full>-->
+                    <!--<img src="{{img.url}}">-->
+                    <figcaption>{{img.id}}: {{img.title}}</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>

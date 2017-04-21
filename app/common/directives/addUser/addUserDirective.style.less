@@ -1,0 +1,48 @@
+/*---====================================================================
+1 - Google Font
+======================================================================---*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
+.fontRobotLight {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+}
+.fontRobotMiddle{
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+}
+.fontRobotBold {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+}
+/*---====================================================================
+2 - Add user directive styles
+======================================================================---*/
+.user-form {
+  div {
+    form {
+      .form-group {
+        label {
+          text-transform: capitalize;
+          .fontRobotBold
+        }
+        div {
+          input {
+
+          }
+          button {
+            &:first-child {
+              .fontRobotLight;
+              background-color: #4A78C0;
+              text-transform: uppercase;
+            }
+            &:nth-child(2) {
+              background-color: #fff;
+              border: 1px solid #4A78C0;
+              color: #4A78C0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

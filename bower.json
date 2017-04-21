@@ -1,0 +1,25 @@
+{
+  "name": "user-manager",
+  "description": "",
+  "main": "",
+  "authors": [
+    "lukasss88 <lukaszszymanski88.99@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "angular": "1.6.0",
+    "angular-route": "1.6.0",
+    "angular-css": "1.0.8",
+    "angular-messages": "1.6.0",
+    "font-awesome": "4.7.0",
+    "angular-filter": "0.5.16",
+    "angular-bootstrap": "^2.5.0"
+  }
+}
